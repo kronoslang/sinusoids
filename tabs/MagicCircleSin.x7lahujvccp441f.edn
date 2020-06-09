@@ -1,0 +1,170 @@
+{:documentation "Generates a sinusoid with a self-oscillating state variable filter."
+ :draft-argument "1"
+ :identifier "MagicCircleSin"
+ :identity "x7lahujvccp441f"
+ :patch
+{:cables
+{["1sv0zz6crek0apq" 0] [:fixed "ynkraub158snsvd" 0]
+ ["281mhfen73e1aq" 0] [:fixed "b0uihd3rjy2t1cr" 0]
+ ["281mhfen73e1aq" 1] [:fixed "h9m3zbv0511krc4" 0]
+ ["4dg38h8bksosuw7" 0] [:fixed "281mhfen73e1aq" 0]
+ ["4dg38h8bksosuw7" 1] [:fixed "ky9apdbg2deqeju" 0]
+ ["5ho81baqghh1pr9" 0] [:fixed "hjq9jw5ntv9e2w7" 0]
+ ["7nqpdgg5wgq644l" 0] [:fixed "h9m3zbv0511krc4" 0]
+ ["7nqpdgg5wgq644l" 1] [:fixed "p3l3sza0vbb7alv" 0]
+ ["82tluhzr9wihax9" 0] [:fixed "936qferj158rksu" 0]
+ ["82tluhzr9wihax9" 1] [:fixed "1sv0zz6crek0apq" 0]
+ ["dkq1tvlo88ordbs" 0] [:fixed "1sv0zz6crek0apq" 0]
+ ["h9m3zbv0511krc4" 0] [:fixed "4dg38h8bksosuw7" 0]
+ ["hjq9jw5ntv9e2w7" 0] [:fixed "11iw9p211nffuyq" 0]
+ ["ky9apdbg2deqeju" 0] [:fixed "82tluhzr9wihax9" 0]
+ ["ky9apdbg2deqeju" 1] [:fixed "p3l3sza0vbb7alv" 0]
+ ["p3l3sza0vbb7alv" 0] [:fixed "pkedwpb7oamybnx" 0]
+ ["pkedwpb7oamybnx" 0] [:fixed "5ho81baqghh1pr9" 0]
+ ["pkedwpb7oamybnx" 1] [:fixed "fzfbmaza2w05zg" 0]
+ ["ynkraub158snsvd" 0] [:fixed "82tluhzr9wihax9" 0]
+ ["ynkraub158snsvd" 1] [:fixed "7nqpdgg5wgq644l" 0]}
+ :nodes
+{"11iw9p211nffuyq" 
+{:color 3
+ :inputs []
+ :label "arg"
+ :outputs [""]
+ :parsed "arg"
+ :pos [-396 -185]}
+ "1sv0zz6crek0apq" 
+{:color 4
+ :inputs ["cos"]
+ :label "$cos"
+ :outputs [""]
+ :parsed [:free-var "cos"]
+ :pos [150 327]}
+ "281mhfen73e1aq" 
+{:color 2
+ :inputs ["init" "sig~"]
+ :label "z-1($init $sig~)"
+ :outputs [""]
+ :parsed [:fn "z-1" [:tuple [:free-var "init"] [:free-var "sig~"]]]
+ :pos [-128 22]}
+ "2u65l9vbnws6b8l" 
+{:inputs []
+ :label "; # Magic Circle Formula #\n\n\nThis circuit is a [reduced form of a state variable filter](https://www.earlevel.com/main/2003/03/02/the-digital-state-variable-filter/) that will just produce an oscillation."
+ :outputs []
+ :parsed [:comment "# Magic Circle Formula #\n\n\nThis circuit is a [reduced form of a state variable filter](https://www.earlevel.com/main/2003/03/02/the-digital-state-variable-filter/) that will just produce an oscillation."]
+ :pos [87 -421]}
+ "4dg38h8bksosuw7" 
+{:color 2
+ :inputs ["a" "b" "more..."]
+ :label "+"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "+" [:free-var "b"] [:free-var "more..."]]
+ :pos [-35 -62]}
+ "5ho81baqghh1pr9" 
+{:color 3
+ :inputs ["a"]
+ :label "* Math:Pi"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" "Math:Pi"]
+ :pos [-186 -185]}
+ "7nqpdgg5wgq644l" 
+{:color 4
+ :inputs ["a" "b" "more..."]
+ :label "*"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:free-var "b"] [:free-var "more..."]]
+ :pos [166 69]}
+ "82tluhzr9wihax9" 
+{:color 4
+ :inputs ["init" "sig~"]
+ :label "z-1($init $sig~)"
+ :outputs [""]
+ :parsed [:fn "z-1" [:tuple [:free-var "init"] [:free-var "sig~"]]]
+ :pos [-15 198]}
+ "936qferj158rksu" 
+{:color 4
+ :inputs []
+ :label "#1"
+ :outputs [""]
+ :parsed [:invariant "1"]
+ :pos [-117 201]}
+ "b0uihd3rjy2t1cr" 
+{:color 2
+ :inputs []
+ :label "#0"
+ :outputs [""]
+ :parsed [:invariant "0"]
+ :pos [-223 34]}
+ "dkq1tvlo88ordbs" 
+{:inputs ["out"]
+ :label "$out"
+ :outputs [""]
+ :parsed [:free-var "out"]
+ :pos [296 370]
+ :selected true}
+ "fu7pm5yx13y2b2u" 
+{:color 4
+ :inputs []
+ :label ";## Cosine ##\n\n\nThis circuit produces a cosine wave."
+ :outputs []
+ :parsed [:comment "## Cosine ##\n\n\nThis circuit produces a cosine wave."]
+ :pos [-140 271]}
+ "fzfbmaza2w05zg" 
+{:color 3
+ :inputs []
+ :label "Gen:Rate()"
+ :outputs [""]
+ :parsed [:fn "Gen:Rate" [:tuple]]
+ :pos [-257 -257]}
+ "h9m3zbv0511krc4" 
+{:cable-midpoints 
+{}
+ :color 2
+ :inputs ["sin"]
+ :label "$sin"
+ :outputs [""]
+ :parsed [:free-var "sin"]
+ :pos [-31 69]}
+ "hjq9jw5ntv9e2w7" 
+{:color 3
+ :inputs ["a"]
+ :label "* #2"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:invariant "2"]]
+ :pos [-291 -185]}
+ "ky9apdbg2deqeju" 
+{:color 2
+ :inputs ["a" "b" "more..."]
+ :label "*"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:free-var "b"] [:free-var "more..."]]
+ :pos [83 -3]}
+ "mmedwu61huxz1r" 
+{:color 2
+ :inputs []
+ :label "; ## Sine ##\n\n\nThis circuit produces a sine wave."
+ :outputs []
+ :parsed [:comment "## Sine ##\n\n\nThis circuit produces a sine wave."]
+ :pos [-303 -105]}
+ "p3l3sza0vbb7alv" 
+{:inputs ["sig"]
+ :label "Gen:Signal($sig)"
+ :name "upsample to audio"
+ :outputs [""]
+ :parsed [:fn "Gen:Signal" [:tuple [:free-var "sig"]]]
+ :pos [19 -185]}
+ "pkedwpb7oamybnx" 
+{:color 3
+ :inputs ["a" "b" "more..."]
+ :label "/"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "/" [:free-var "b"] [:free-var "more..."]]
+ :pos [-81 -185]}
+ "ynkraub158snsvd" 
+{:color 4
+ :inputs ["a" "b" "more..."]
+ :label "-"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "-" [:free-var "b"] [:free-var "more..."]]
+ :pos [83 235]}}
+ :scale 1
+ :scroll [0 0]}}

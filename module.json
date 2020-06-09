@@ -1,0 +1,8 @@
+{
+  "dependencies": {},
+  "description": "Demonstrates different methods and tradeoffs for generating sinusoids.",
+  "license": "https://www.eclipse.org/legal/epl-v10.html",
+  "name": "Sinusoid Generators",
+  "url": "https://kronoslang.io",
+  "version": "0.1"
+}

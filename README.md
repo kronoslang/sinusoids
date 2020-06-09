@@ -1,2 +1,0 @@
-# sinusoids
-Created by Veneer

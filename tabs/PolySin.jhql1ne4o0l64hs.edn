@@ -1,0 +1,171 @@
+{:draft-argument "1"
+ :identifier "PolySin"
+ :identity "jhql1ne4o0l64hs"
+ :patch
+{:cables
+{["0pkgetqru2i1833" 0] [:fixed "mcna7766gl8xbcu" 0]
+ ["0pkgetqru2i1833" 1] [:fixed "whbtxul2r1pyzb" 0]
+ ["2fwapktpibo7x54" 0] [:fixed "rd470c9664as9qm" 0]
+ ["2fwapktpibo7x54" 1] [:fixed "io9asiyud7tluhn" 0]
+ ["2fwapktpibo7x54" 2] [:fixed "48o0w9c6gya55u3" 0]
+ ["3kewo2ftuhoq7c4" 0] [:fixed "zvym5l7t5uowig4" 0]
+ ["48o0w9c6gya55u3" 0] [:fixed "bip5h4tve5zjzhz" 0]
+ ["48o0w9c6gya55u3" 1] [:fixed "0pkgetqru2i1833" 0]
+ ["5f2573637siul27" 0] [:fixed "rqp77buvw82ybdw" 0]
+ ["7us6xk1z0fk8n1s" 0] [:fixed "uup1ofmq05lo89c" 0]
+ ["dd6hwmckre20sny" 0] [:fixed "3kewo2ftuhoq7c4" 0]
+ ["dd6hwmckre20sny" 1] [:fixed "3kewo2ftuhoq7c4" 0]
+ ["eng7kuw83nmz2ne" 0] [:fixed "wikyl1hk4eiogda" 0]
+ ["eng7kuw83nmz2ne" 1] [:fixed "3kewo2ftuhoq7c4" 0]
+ ["io9asiyud7tluhn" 0] [:fixed "7us6xk1z0fk8n1s" 0]
+ ["io9asiyud7tluhn" 1] [:fixed "0pkgetqru2i1833" 0]
+ ["rqp77buvw82ybdw" 0] [:fixed "688a7z5h2ofck94" 0]
+ ["wikyl1hk4eiogda" 0] [:fixed "dd6hwmckre20sny" 0]
+ ["wikyl1hk4eiogda" 1] [:fixed "2fwapktpibo7x54" 0]
+ ["zvym5l7t5uowig4" 0] [:fixed "5f2573637siul27" 0]}
+ :nodes
+{"0pkgetqru2i1833" 
+{:color 3
+ :inputs ["n" "start"]
+ :label "Algorithm:Count($n $start)"
+ :outputs [""]
+ :parsed [:fn "Algorithm:Count" [:tuple [:free-var "n"] [:free-var "start"]]]
+ :pos [-379 -192]}
+ "2fwapktpibo7x54" 
+{:color 3
+ :inputs ["func" "as" "bs"]
+ :label "Algorithm:Zip-With($func $as $bs)"
+ :name "polynomial coefs"
+ :outputs [""]
+ :parsed [:fn "Algorithm:Zip-With" [:tuple [:free-var "func"] [:free-var "as"] [:free-var "bs"]]]
+ :pos [22 92]}
+ "31r54vmxn9ddsv" 
+{:inputs []
+ :label "; Produce a periodic phasor in the range [-Pi, Pi]"
+ :outputs []
+ :parsed [:comment "Produce a periodic phasor in the range [-Pi, Pi]"]
+ :pos [-228 255]}
+ "3kewo2ftuhoq7c4" 
+{:inputs ["a"]
+ :label "* Math:Pi"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" "Math:Pi"]
+ :pos [-21 187]}
+ "48o0w9c6gya55u3" 
+{:color 3
+ :ephemeral-inputs #{"set"}
+ :inputs ["func" "set" "set..."]
+ :label "Algorithm:Map($func $set...)"
+ :name "factorials"
+ :outputs [""]
+ :parsed [:fn "Algorithm:Map" [:tuple [:free-var "func"] [:free-var "set"] [:free-var "set..."]]]
+ :pos [56 -84]}
+ "5f2573637siul27" 
+{:inputs ["a"]
+ :label "* #2"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:invariant "2"]]
+ :pos [-231 187]}
+ "688a7z5h2ofck94" 
+{:inputs []
+ :label "arg"
+ :outputs [""]
+ :parsed "arg"
+ :pos [-460 187]}
+ "7llhm7zkjbhrkl" 
+{:color 2
+ :inputs []
+ :label "; Evaluate polynomial with [Horner's scheme](https://en.wikipedia.org/wiki/Horner_scheme).\n\n\nBecause we have non-zero coefficients for odd powers only, we compute the polynomial of x^2 and multiply the output by x once more."
+ :outputs []
+ :parsed [:comment "Evaluate polynomial with [Horner's scheme](https://en.wikipedia.org/wiki/Horner_scheme).\n\n\nBecause we have non-zero coefficients for odd powers only, we compute the polynomial of x^2 and multiply the output by x once more."]
+ :pos [335 -12]}
+ "7us6xk1z0fk8n1s" 
+{:color 3
+ :inputs ["a" "b"]
+ :label "Math:Pow($a $b)"
+ :outputs [""]
+ :parsed [:fn "Math:Pow" [:tuple [:free-var "a"] [:free-var "b"]]]
+ :pos [-285 19]}
+ "bip5h4tve5zjzhz" 
+{:color 3
+ :inputs ["n"]
+ :label "Math:Factorial($n * #2 + #1)"
+ :outputs [""]
+ :parsed [:fn "Math:Factorial" [:tuple [:infix [:infix [:free-var "n"] "*" [:invariant "2"]] "+" [:invariant "1"]]]]
+ :pos [-155 -84]}
+ "dd6hwmckre20sny" 
+{:color 2
+ :inputs ["a" "b" "more..."]
+ :label "*"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:free-var "b"] [:free-var "more..."]]
+ :pos [96 256]}
+ "eng7kuw83nmz2ne" 
+{:color 2
+ :inputs ["a" "b" "more..."]
+ :label "*"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:free-var "b"] [:free-var "more..."]]
+ :pos [403 289]}
+ "io9asiyud7tluhn" 
+{:color 3
+ :ephemeral-inputs #{"set"}
+ :inputs ["func" "set" "set..."]
+ :label "Algorithm:Map($func $set...)"
+ :name "alternate sign"
+ :outputs [""]
+ :parsed [:fn "Algorithm:Map" [:tuple [:free-var "func"] [:free-var "set"] [:free-var "set..."]]]
+ :pos [-155 19]}
+ "l1b4yxaqabo7cza" 
+{:inputs []
+ :label "; ## Taylor Series ##\n\n\nLet's generate (at compile time) a series of polynomial coefficients to make a curve approximating a sinusoid.\n\n\nTry evaluating one of the `Map` nodes or `Zip-With` to see intermediate stages!\n\n\n\n[See here](http://people.math.sc.edu/girardi/m142/handouts/10sTaylorPolySeries.pdf)"
+ :outputs []
+ :parsed [:comment "## Taylor Series ##\n\n\nLet's generate (at compile time) a series of polynomial coefficients to make a curve approximating a sinusoid.\n\n\nTry evaluating one of the `Map` nodes or `Zip-With` to see intermediate stages!\n\n\n\n[See here](http://people.math.sc.edu/girardi/m142/handouts/10sTaylorPolySeries.pdf)"]
+ :pos [1 -364]}
+ "mcna7766gl8xbcu" 
+{:color 3
+ :inputs []
+ :label "#7"
+ :outputs [""]
+ :parsed [:invariant "7"]
+ :pos [-503 -192]}
+ "rd470c9664as9qm" 
+{:color 3
+ :inputs ["a" "b" "more..."]
+ :label "/"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "/" [:free-var "b"] [:free-var "more..."]]
+ :pos [-207 92]}
+ "rqp77buvw82ybdw" 
+{:inputs ["freq"]
+ :label "Gen:Phasor($freq)"
+ :outputs [""]
+ :parsed [:fn "Gen:Phasor" [:tuple [:free-var "freq"]]]
+ :pos [-355 187]}
+ "uup1ofmq05lo89c" 
+{:color 3
+ :inputs []
+ :label "#-1"
+ :outputs [""]
+ :parsed [:invariant "-1"]
+ :pos [-406 19]}
+ "whbtxul2r1pyzb" 
+{:color 3
+ :inputs []
+ :label "#0"
+ :outputs [""]
+ :parsed [:invariant "0"]
+ :pos [-442 -289]}
+ "wikyl1hk4eiogda" 
+{:color 2
+ :inputs ["x" "coefficients"]
+ :label "Math:Horner-Scheme($x $coefficients)"
+ :outputs [""]
+ :parsed [:fn "Math:Horner-Scheme" [:tuple [:free-var "x"] [:free-var "coefficients"]]]
+ :pos [247 314]}
+ "zvym5l7t5uowig4" 
+{:inputs ["a"]
+ :label "- #1"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "-" [:invariant "1"]]
+ :pos [-126 187]}}}}

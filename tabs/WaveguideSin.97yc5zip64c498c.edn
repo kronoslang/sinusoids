@@ -1,0 +1,199 @@
+{:documentation "Generates a sinusoid with an acoustic waveguide model."
+ :draft-argument "3"
+ :identifier "WaveguideSin"
+ :identity "97yc5zip64c498c"
+ :patch
+{:cables
+{["48036oe8b0tktuz" 0] [:fixed "dl21l64ffxqiapt" 0]
+ ["76vs6wzbiyx78xh" 0] [:fixed "inm09so9y9cf9ok" 0]
+ ["76vs6wzbiyx78xh" 1] [:fixed "n0avyrkvk3jh4uf" 0]
+ ["cs0brk5sr3iy286" 0] [:fixed "p56d2a869pq56vc" 0]
+ ["dl21l64ffxqiapt" 0] [:fixed "osuqb3xqg5fb3ek" 0]
+ ["e1zmqzsyvoj3ic" 0] [:fixed "cs0brk5sr3iy286" 0]
+ ["ecfmdara8gwd7d" 0] [:fixed "mp9luv5yax392hz" 0]
+ ["ffh5knfdeiduc11" 0] [:fixed "inm09so9y9cf9ok" 0]
+ ["ffh5knfdeiduc11" 1] [:fixed "vj5m02bwt23a44l" 0]
+ ["gka26qeyq9msgct" 0] [:fixed "e1zmqzsyvoj3ic" 0]
+ ["gka26qeyq9msgct" 1] [:fixed "fjyvisfo9mvh14p" 0]
+ ["inm09so9y9cf9ok" 0] [:fixed "tu5gqf8c5rgqe2v" 0]
+ ["inm09so9y9cf9ok" 1] [:fixed "ecfmdara8gwd7d" 0]
+ ["kgxhfwhoego1o5a" 0] [:fixed "ffh5knfdeiduc11" 0]
+ ["mp9luv5yax392hz" 0] [:fixed "48036oe8b0tktuz" 0]
+ ["n0avyrkvk3jh4uf" 0] [:fixed "2fmamzwd2ol0dbb" 0]
+ ["n0avyrkvk3jh4uf" 1] [:fixed "ffh5knfdeiduc11" 0]
+ ["osuqb3xqg5fb3ek" 0] [:fixed "y4kby16kc87splt" 0]
+ ["osuqb3xqg5fb3ek" 1] [:fixed "y4kby16kc87splt" 0]
+ ["tu5gqf8c5rgqe2v" 0] [:fixed "n0avyrkvk3jh4uf" 0]
+ ["tu5gqf8c5rgqe2v" 1] [:fixed "vj5m02bwt23a44l" 0]
+ ["vj5m02bwt23a44l" 0] [:fixed "p01bfw41ina47d8" 0]
+ ["vj5m02bwt23a44l" 1] [:fixed "76vs6wzbiyx78xh" 0]
+ ["y4kby16kc87splt" 0] [:fixed "gka26qeyq9msgct" 0]}
+ :nodes
+{"2fmamzwd2ol0dbb" 
+{:color 4
+ :inputs []
+ :label "#1"
+ :outputs [""]
+ :parsed [:invariant "1"]
+ :pos [-42 109]}
+ "48036oe8b0tktuz" 
+{:color 3
+ :inputs ["b"]
+ :label "#1 /"
+ :outputs [""]
+ :parsed [:infix [:invariant "1"] "/" [:free-var "b"]]
+ :pos [152 -96]}
+ "76vs6wzbiyx78xh" 
+{:cable-midpoints 
+{0 [-226 142]}
+ :color 4
+ :flip-y true
+ :inputs ["a" "b" "more..."]
+ :label "+"
+ :name "y"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "+" [:free-var "b"] [:free-var "more..."]]
+ :pos [-206 215]}
+ "cs0brk5sr3iy286" 
+{:color 3
+ :inputs ["a"]
+ :label "* #2"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:invariant "2"]]
+ :pos [-278 -331]}
+ "dl21l64ffxqiapt" 
+{:color 3
+ :inputs ["a"]
+ :label "+ #1"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "+" [:invariant "1"]]
+ :pos [60 -94]}
+ "e1zmqzsyvoj3ic" 
+{:color 3
+ :inputs ["a"]
+ :label "* Math:Pi"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" "Math:Pi"]
+ :pos [-173 -331]}
+ "ecfmdara8gwd7d" 
+{:inputs ["sig"]
+ :label "Gen:Signal($sig)"
+ :outputs [""]
+ :parsed [:fn "Gen:Signal" [:tuple [:free-var "sig"]]]
+ :pos [283 -18]}
+ "ffh5knfdeiduc11" 
+{:cable-midpoints 
+{0 [-221 -132]}
+ :color 2
+ :inputs ["a" "b" "more..."]
+ :label "-"
+ :name "x"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "-" [:free-var "b"] [:free-var "more..."]]
+ :pos [-206 103]}
+ "fjyvisfo9mvh14p" 
+{:color 3
+ :inputs []
+ :label "Gen:Rate()"
+ :outputs [""]
+ :parsed [:fn "Gen:Rate" [:tuple]]
+ :pos [-219 -402]}
+ "gka26qeyq9msgct" 
+{:color 3
+ :inputs ["a" "b" "more..."]
+ :label "/"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "/" [:free-var "b"] [:free-var "more..."]]
+ :pos [-68 -331]}
+ "inm09so9y9cf9ok" 
+{:inputs ["a" "b" "more..."]
+ :label "*"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:free-var "b"] [:free-var "more..."]]
+ :pos [280 149]}
+ "kgxhfwhoego1o5a" 
+{:inputs ["out"]
+ :label "$out"
+ :outputs [""]
+ :parsed [:free-var "out"]
+ :pos [42 387]
+ :selected true}
+ "mp9luv5yax392hz" 
+{:color 3
+ :inputs ["a"]
+ :label "Math:Sqrt($a)"
+ :outputs [""]
+ :parsed [:fn "Math:Sqrt" [:tuple [:free-var "a"]]]
+ :pos [257 -96]}
+ "n0avyrkvk3jh4uf" 
+{:color 4
+ :inputs ["init" "sig~"]
+ :label "z-1($init $sig~)"
+ :outputs [""]
+ :parsed [:fn "z-1" [:tuple [:free-var "init"] [:free-var "sig~"]]]
+ :pos [37 108]}
+ "n5x1fv1zq4iu2hz" 
+{:color 2
+ :inputs []
+ :label ";### Waveguide ###\n\n\nThis simple mesh has two scattering junctions that feed into each other."
+ :outputs []
+ :parsed [:comment "### Waveguide ###\n\n\nThis simple mesh has two scattering junctions that feed into each other."]
+ :pos [272 243]}
+ "oq073u7gkace1g6" 
+{:inputs []
+ :label "; # Digital Waveguide #\n\n\nThis sinusoid generator is built on a digital waveguide model of an acoustic system."
+ :outputs []
+ :parsed [:comment "# Digital Waveguide #\n\n\nThis sinusoid generator is built on a digital waveguide model of an acoustic system."]
+ :pos [268 -437]}
+ "osuqb3xqg5fb3ek" 
+{:color 3
+ :inputs ["a" "b" "more..."]
+ :label "*"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:free-var "b"] [:free-var "more..."]]
+ :pos [-35 -93]}
+ "p01bfw41ina47d8" 
+{:color 2
+ :inputs []
+ :label "#0"
+ :outputs [""]
+ :parsed [:invariant "0"]
+ :pos [-42 196]}
+ "p56d2a869pq56vc" 
+{:inputs []
+ :label "arg"
+ :outputs [""]
+ :parsed "arg"
+ :pos [-383 -331]}
+ "tu5gqf8c5rgqe2v" 
+{:flip-y true
+ :inputs ["a" "b" "more..."]
+ :label "+"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "+" [:free-var "b"] [:free-var "more..."]]
+ :pos [193 109]}
+ "vj5m02bwt23a44l" 
+{:color 2
+ :flip-y true
+ :inputs ["init" "sig~"]
+ :label "z-1($init $sig~)"
+ :outputs [""]
+ :parsed [:fn "z-1" [:tuple [:free-var "init"] [:free-var "sig~"]]]
+ :pos [38 196]}
+ "y4kby16kc87splt" 
+{:color 3
+ :inputs ["x"]
+ :label "Math:Tan($x)"
+ :name "theta"
+ :outputs [""]
+ :parsed [:fn "Math:Tan" [:tuple [:free-var "x"]]]
+ :pos [7 -252]}
+ "yp0tmk6psuf4v2c" 
+{:color 3
+ :inputs []
+ :label "; ### Coefficient computation ###"
+ :outputs []
+ :parsed [:comment "### Coefficient computation ###"]
+ :pos [180 -167]}}
+ :scale 1
+ :scroll [0 0]}}

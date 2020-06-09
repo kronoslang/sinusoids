@@ -1,0 +1,126 @@
+{:documentation "Generates a sinusoid by complex rotation."
+ :draft-argument "1"
+ :identifier "ComplexSin"
+ :identity "cn9304b2s6lu2bk"
+ :patch
+{:cables
+{["19ws1q206rk58r" 0] [:fixed "y8p5z0rsvjkbdp1" 0]
+ ["1molyrmjswukntg" 0] [:fixed "u5jeck0202ocvfe" 0]
+ ["1molyrmjswukntg" 1] [:fixed "9qzss8y2jqj626d" 0]
+ ["48a0v32ee2iap9l" 0] [:fixed "9qzss8y2jqj626d" 0]
+ ["70hbx2fkedu622" 0] [:fixed "3yq4uva2h5wm2ng" 0]
+ ["9qzss8y2jqj626d" 0] [:fixed "1molyrmjswukntg" 0]
+ ["9qzss8y2jqj626d" 1] [:fixed "ykpc4gc3nt5hamn" 0]
+ ["bhx1ve16krmkzpb" 0] [:fixed "70hbx2fkedu622" 0]
+ ["jjsaob56c2hv777" 0] [:fixed "48a0v32ee2iap9l" 0]
+ ["scu7asvoinl9f7h" 0] [:fixed "19ws1q206rk58r" 0]
+ ["y8p5z0rsvjkbdp1" 0] [:fixed "bhx1ve16krmkzpb" 0]
+ ["y8p5z0rsvjkbdp1" 1] [:fixed "3nwqgtee7t55eww" 0]
+ ["ykpc4gc3nt5hamn" 0] [:fixed "scu7asvoinl9f7h" 0]}
+ :nodes
+{"0fmm174589p43na" 
+{:color 3
+ :inputs []
+ :label "; The rotation vector is obtained by [Euler's formula](https://mathworld.wolfram.com/EulerFormula.html): the exponential for a complex value `I * angle`."
+ :outputs []
+ :parsed [:comment "The rotation vector is obtained by [Euler's formula](https://mathworld.wolfram.com/EulerFormula.html): the exponential for a complex value `I * angle`."]
+ :pos [-184 162]}
+ "19ws1q206rk58r" 
+{:color 3
+ :inputs ["a"]
+ :label "* I"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" "I"]
+ :pos [-72 96]}
+ "1molyrmjswukntg" 
+{:inputs ["init" "sig~"]
+ :label "z-1($init $sig~)"
+ :outputs [""]
+ :parsed [:fn "z-1" [:tuple [:free-var "init"] [:free-var "sig~"]]]
+ :pos [119 -18]}
+ "2wtdny6j88blmtm" 
+{:inputs []
+ :label "; recursive rotation"
+ :outputs []
+ :parsed [:comment "recursive rotation"]
+ :pos [277 -75]}
+ "3nwqgtee7t55eww" 
+{:color 3
+ :inputs []
+ :label "Gen:Rate()"
+ :outputs [""]
+ :parsed [:fn "Gen:Rate" [:tuple]]
+ :pos [-311 28]}
+ "3yq4uva2h5wm2ng" 
+{:inputs []
+ :label "arg"
+ :outputs [""]
+ :parsed "arg"
+ :pos [-475 96]}
+ "48a0v32ee2iap9l" 
+{:inputs ["c"]
+ :label "Complex:Real($c)"
+ :name "take cosine"
+ :outputs [""]
+ :parsed [:fn "Complex:Real" [:tuple [:free-var "c"]]]
+ :pos [270 157]}
+ "70hbx2fkedu622" 
+{:color 3
+ :inputs ["a"]
+ :label "* #2"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:invariant "2"]]
+ :pos [-370 96]}
+ "9qzss8y2jqj626d" 
+{:flip-y true
+ :inputs ["a" "b" "more..."]
+ :label "*"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:free-var "b"] [:free-var "more..."]]
+ :pos [239 45]}
+ "bhx1ve16krmkzpb" 
+{:color 3
+ :inputs ["a"]
+ :label "* Math:Pi"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" "Math:Pi"]
+ :pos [-271 96]}
+ "jjsaob56c2hv777" 
+{:inputs ["out"]
+ :label "$out"
+ :outputs [""]
+ :parsed [:free-var "out"]
+ :pos [375 157]}
+ "scu7asvoinl9f7h" 
+{:color 3
+ :inputs ["a"]
+ :label "Math:Exp($a)"
+ :outputs [""]
+ :parsed [:fn "Math:Exp" [:tuple [:free-var "a"]]]
+ :pos [27 96]}
+ "u5jeck0202ocvfe" 
+{:inputs []
+ :label "#1"
+ :outputs [""]
+ :parsed [:invariant "1"]
+ :pos [39 -18]}
+ "wxua8wr0wqawkj2" 
+{:inputs []
+ :label "; # Complex Rotation #\n\n\nWe compute a complex rotation coefficient and recursively multiply 1 by it again and again.\n\n\nThe rotation will consist of cosine and sine as real and imaginary parts."
+ :outputs []
+ :parsed [:comment "# Complex Rotation #\n\n\nWe compute a complex rotation coefficient and recursively multiply 1 by it again and again.\n\n\nThe rotation will consist of cosine and sine as real and imaginary parts."]
+ :pos [-261 -213]}
+ "y8p5z0rsvjkbdp1" 
+{:color 3
+ :inputs ["a" "b" "more..."]
+ :label "/"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "/" [:free-var "b"] [:free-var "more..."]]
+ :pos [-171 96]}
+ "ykpc4gc3nt5hamn" 
+{:inputs ["sig"]
+ :label "Gen:Signal($sig)"
+ :name "upsample to audio"
+ :outputs [""]
+ :parsed [:fn "Gen:Signal" [:tuple [:free-var "sig"]]]
+ :pos [162 94]}}}}

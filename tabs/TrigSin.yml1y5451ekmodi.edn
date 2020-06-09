@@ -1,0 +1,49 @@
+{:documentation "Generates a sinusoid at `freq`uency by applying a trigonometric function to a phasor signal.\n"
+ :draft-argument "1"
+ :identifier "TrigSin"
+ :identity "yml1y5451ekmodi"
+ :patch
+{:cables
+{["ev397fc50kmj861" 0] [:fixed "fzu0fmxh34g9ref" 0]
+ ["fzu0fmxh34g9ref" 0] [:fixed "ioyowpnwwgzzyyj" 0]
+ ["ioyowpnwwgzzyyj" 0] [:fixed "d3n8yzho8lmv2jf" 0]
+ ["yi48hbfex91jir4" 0] [:fixed "ev397fc50kmj861" 0]}
+ :nodes
+{"3w97y6spy7ohsm7" 
+{:inputs []
+ :label "; # Trigonometric Waveshaping #\n\n\nHere we simply generate a periodic phasor signal that goes from 0 to 2Pi, and apply `Math:Sin` to that to get a sinusoid curve."
+ :outputs []
+ :parsed [:comment "# Trigonometric Waveshaping #\n\n\nHere we simply generate a periodic phasor signal that goes from 0 to 2Pi, and apply `Math:Sin` to that to get a sinusoid curve."]
+ :pos [-54 -157]}
+ "d3n8yzho8lmv2jf" 
+{:inputs []
+ :label "arg"
+ :outputs [""]
+ :parsed "arg"
+ :pos [-274 106]}
+ "ev397fc50kmj861" 
+{:inputs ["a"]
+ :label "* Math:Pi"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" "Math:Pi"]
+ :pos [60 106]}
+ "fzu0fmxh34g9ref" 
+{:inputs ["a"]
+ :label "* #2"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:invariant "2"]]
+ :pos [-45 106]}
+ "ioyowpnwwgzzyyj" 
+{:inputs ["freq"]
+ :label "Gen:Phasor($freq)"
+ :outputs [""]
+ :parsed [:fn "Gen:Phasor" [:tuple [:free-var "freq"]]]
+ :pos [-169 106]}
+ "yi48hbfex91jir4" 
+{:inputs ["a"]
+ :label "Math:Sin($a)"
+ :outputs [""]
+ :parsed [:fn "Math:Sin" [:tuple [:free-var "a"]]]
+ :pos [175 106]}}
+ :scale 1
+ :scroll [0 0]}}

@@ -1,0 +1,81 @@
+{:identity "initial"
+ :patch
+{:cables
+{["26zam6ni1kr5wxw" 0] [:fixed "i87burmj6br95nb" 0]
+ ["acpd6gou3xtnai3" 0] [:fixed "i87burmj6br95nb" 0]
+ ["c5y0xw87pab22n4" 0] [:fixed "igsdg57xrh1hq3y" 0]
+ ["gv6gyazdbm8e3" 0] [:fixed "i87burmj6br95nb" 0]
+ ["igsdg57xrh1hq3y" 0] [:fixed "j8ydhb2c6uchcs1" 0]
+ ["iqjo927vnci9ci4" 0] [:fixed "i87burmj6br95nb" 0]
+ ["j8ydhb2c6uchcs1" 0] [:fixed "26zam6ni1kr5wxw" 0]
+ ["j8ydhb2c6uchcs1" 1] [:fixed "xbwrku89mfb91gw" 0]
+ ["j8ydhb2c6uchcs1" 2] [:fixed "iqjo927vnci9ci4" 0]
+ ["j8ydhb2c6uchcs1" 3] [:fixed "acpd6gou3xtnai3" 0]
+ ["j8ydhb2c6uchcs1" 4] [:fixed "gv6gyazdbm8e3" 0]
+ ["xbwrku89mfb91gw" 0] [:fixed "i87burmj6br95nb" 0]}
+ :nodes
+{"15y7wijrv2qwj7r" 
+{:inputs []
+ :label ";# Sinusoid Buffet #\n\n\nThis workspace has five different means of generating sinusoids.\n\n\nThe least efficient implementation is `TrigSin` and the fastest generator is `WaveguideSin`.\n\n\n`TrigSin` and `ComplexSin` are very pure, like `MagicCircleSin` for not-too-high frequencies and `WaveguideSin` for not-too-low frequencies.\n\n\n\nFor `ComplexSin` and `WaveguideSin` it's expensive to change frequency.\n\n\n`MagicCircleSin` and `WaveguideSin` may blow up if the frequency changes quickly. You can rebalance them by stopping and restarting audio."
+ :outputs []
+ :parsed [:comment "# Sinusoid Buffet #\n\n\nThis workspace has five different means of generating sinusoids.\n\n\nThe least efficient implementation is `TrigSin` and the fastest generator is `WaveguideSin`.\n\n\n`TrigSin` and `ComplexSin` are very pure, like `MagicCircleSin` for not-too-high frequencies and `WaveguideSin` for not-too-low frequencies.\n\n\n\nFor `ComplexSin` and `WaveguideSin` it's expensive to change frequency.\n\n\n`MagicCircleSin` and `WaveguideSin` may blow up if the frequency changes quickly. You can rebalance them by stopping and restarting audio."]
+ :pos [297 -330]}
+ "26zam6ni1kr5wxw" 
+{:inputs ["in-1"]
+ :label "TrigSin($in-1)"
+ :outputs [""]
+ :parsed [:fn "TrigSin" [:tuple [:free-var "in-1"]]]
+ :pos [-279 90]}
+ "acpd6gou3xtnai3" 
+{:inputs ["in-1"]
+ :label "MagicCircleSin($in-1)"
+ :outputs [""]
+ :parsed [:fn "MagicCircleSin" [:tuple [:free-var "in-1"]]]
+ :pos [-133 -112]}
+ "c5y0xw87pab22n4" 
+{:inputs ["sig"]
+ :label "o))"
+ :name "play here!"
+ :outputs ["thru"]
+ :parsed [:playback [:free-var "sig"]]
+ :pos [303 167]}
+ "gv6gyazdbm8e3" 
+{:inputs ["in-1"]
+ :label "WaveguideSin($in-1)"
+ :outputs [""]
+ :parsed [:fn "WaveguideSin" [:tuple [:free-var "in-1"]]]
+ :pos [-84 -180]}
+ "i87burmj6br95nb" 
+{:color 3
+ :inputs []
+ :label "1 -x- 20000"
+ :name "change frequency here!"
+ :outputs [""]
+ :parsed [:widget "fak99u" 0.5 {:type :slider, :limits [[:float "1"] [:float "20000"]], :render [:limits], :size 3, :orientation :vertical, :curve :exponential}]
+ :pos [-403 -221]}
+ "igsdg57xrh1hq3y" 
+{:inputs ["a"]
+ :label "* 0.2"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:float "0.2"]]
+ :pos [168 170]}
+ "iqjo927vnci9ci4" 
+{:inputs ["in-1"]
+ :label "ComplexSin($in-1)"
+ :outputs [""]
+ :parsed [:fn "ComplexSin" [:tuple [:free-var "in-1"]]]
+ :pos [-181 -45]}
+ "j8ydhb2c6uchcs1" 
+{:color 3
+ :inputs ["trig" "poly" "complex" "svf" "dwg"]
+ :label "$trig |/ ($poly $complex $svf $dwg)"
+ :name "press the button to hear different generators"
+ :outputs [""]
+ :parsed [:widget "kr2xp6" 0 {:type :toggle, :render [:states], :states [[:free-var "trig"] [:free-var "poly"] [:free-var "complex"] [:free-var "svf"] [:free-var "dwg"]]}]
+ :pos [-41 165]}
+ "xbwrku89mfb91gw" 
+{:inputs ["in-1"]
+ :label "PolySin($in-1)"
+ :outputs [""]
+ :parsed [:fn "PolySin" [:tuple [:free-var "in-1"]]]
+ :pos [-230 23]}}}}
